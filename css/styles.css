@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap');
+
 body{
     background-image:linear-gradient(to right,#00316E,#800000);
     margin: 0 auto; 
@@ -9,7 +11,9 @@ body,html{
 #title-header{
     font-family: 'Archivo Black', sans-serif;
     text-align: center; 
-    font-size: 3em;  
+    font-size: 5em;  
+    margin-top: 150px; 
+    opacity: 80%; 
 }
 
 
@@ -17,16 +21,16 @@ body,html{
 /* The hero image */
 .hero-image {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/banner.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/low-opacity-banner.png");
   
     /* Set a specific height */
     height: 40%;
-    z-index: -10;
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
   }
   
   /* Place text in the middle of the image */
@@ -36,25 +40,41 @@ body,html{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white; 
+    color:#c78d20; 
     width: 100%; 
+  
   }
 
-  #paragraph-header{
-      text-align: center; 
-      color: white; 
-      font-size: 3em; 
-      border: 3px solid white; 
-  }
 
-  #pvp{
-    z-index: 10; 
-   color: white; 
-   border: 2px solid rgba(150,0,0,0.8);
-   background-color: rgba(10,10,15,0.4); 
+  .button1 {
+    font-family: 'Fascinate Inline', regular;
+    font-size: 2em;
+    background: linear-gradient(to bottom, #F46001, #E14802);
+    color: #FFF;
+    border-radius: 2em;
+    padding: .6em 1.5em;
+    width: 50vw; 
+   margin-bottom: 3vw;    
+  }
+    
+.button1:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.9), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+  
+
+.instruction-wrapper{
+  border: 3px solid white; 
 }
 
-#pvp:hover{
-   z-index:10;
-   background-color: rgba(10,10,15,0.6);
-} 
+
+  #paragraph-header{
+      font-size: 3em;
+      text-align: center; 
+      color: white; 
+  }
+
+
+
+
+  
