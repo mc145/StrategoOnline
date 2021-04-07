@@ -1,0 +1,37 @@
+    
+body{
+  background-image:linear-gradient(to right,#00316E,#800000);
+
+}
+
+.vl{
+    border-left: 3px dotted white;
+  height: 100vw;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+
+#howtoplayheader{
+  color: white;
+  font-family: 'MedievalSharp', cursive;
+
+
+}
+.how-to-play{
+  margin-left: 9vw;
+  margin-top: 2.5vh;  
+}
+.pieces{
+  text-align: right; 
+  margin-right: 11vw;
+}
+
+.back-button{
+  background-color: purple; 
+  color: white; 
+  
+}
+
