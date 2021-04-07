@@ -61,7 +61,7 @@ body{
     transition: all 0.3s ease-in-out;
   }
   .effect01:hover {
-    border: 4px solid #666;
+    border: 4px solid #800000;
     background-color: #00316E;
     box-shadow:0px 0px 0px 4px #EEE inset;
   }
