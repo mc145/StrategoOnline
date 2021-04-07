@@ -14,9 +14,10 @@ body{
     justify-content: left;
     text-align: left;
     margin-top: 30px; 
+    margin-left: -10px;
     width: 100%;
     height: 100%;
-    margin: 0 auto;
+    margin: left;
   /*   padding: 2em 0em; */
   }
   
@@ -24,8 +25,8 @@ body{
     align-items: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
+    margin-left: 10px;
     margin-top: 30px; 
     padding:  40px 0px;
     width: 240px;
@@ -40,7 +41,7 @@ body{
     font-weight: 400;
     line-height: 45px;
     max-width: 160px;
-    position: relative;
+    position: left;
     text-decoration: none;
     text-transform: uppercase;
     width: 100%;
@@ -52,9 +53,9 @@ body{
   /*btn_background*/
   .effect01 {
     color: #FFF;
-    border: 4px solid purple;
+    border: 4px solid #00316E;
     box-shadow:0px 0px 0px 4px #000 inset;
-    background-color: purple;
+    background-color: #00316E;
     overflow: hidden;
     position: relative;
     transition: all 0.3s ease-in-out;
