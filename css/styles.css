@@ -8,20 +8,14 @@ body{
 body,html{
     height:100%; 
 }
-#title-header{
-    font-family: 'Archivo Black', sans-serif;
-    text-align: center; 
-    font-size: 5em;  
-    margin-top: 150px; 
-    opacity: 80%; 
-}
+
 
 
 
 /* The hero image */
 .hero-image {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/low-opacity-banner.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/new banner.png");
   
     /* Set a specific height */
     height: 40%;
@@ -46,15 +40,21 @@ body,html{
   }
 
 
+
+
+  .button-wrapper{
+    text-align: center; 
+  }
   .button1 {
-    font-family: 'Fascinate Inline', regular;
+   /* font-family: 'Fascinate Inline', regular;*/
+   font-family: 'MedievalSharp', cursive;
     font-size: 2em;
     background: linear-gradient(to bottom, #F46001, #E14802);
     color: #FFF;
     border-radius: 2em;
     padding: .6em 1.5em;
     width: 50vw; 
-   margin-bottom: 3vw;    
+    margin-top: 30px; 
   }
     
 .button1:hover{
@@ -72,8 +72,11 @@ body,html{
       font-size: 3em;
       text-align: center; 
       color: white; 
+      font-family: 'MedievalSharp', cursive;
+
   }
 
+  
 
 
 
