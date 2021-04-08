@@ -7,97 +7,158 @@ body{
 }
 
 
-.buttons {
-    display: flex;
-    flex-direction: row;
-        flex-wrap: wrap;
-    justify-content: left;
-    text-align: left;
-    margin-top: 30px; 
-    margin-left: -10px;
-    width: 100%;
-    height: 100%;
-    margin: left;
-  /*   padding: 2em 0em; */
-  }
-  
-  .container {
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-left: 10px;
-    margin-top: 30px; 
-    padding:  40px 0px;
-    width: 240px;
-  }
 
+
+.board-img{
+  width:54vw; 
+  position: relative;
+  top: -110px; 
+  
+} 
+.board-wrapper{
+  text-align: center; 
+  
+}
+
+.blue-flag{
+  position: absolute; 
+  top: 10px; 
+  right: 10px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DO NOT DELETE ANY OF THIS STUFF BELOW AKSHAY AGARWHALE*/
+
+
+
+
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+      flex-wrap: wrap;
+  justify-content: left;
+  text-align: left;
+  vertical-align: top; 
+ /*margin-top: -15px; */
+  width: 100%;
+  height: 100%;
   
   
-  .btn {
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 45px;
-    max-width: 160px;
-    position: left;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-  }
-  .btn:hover {
-    text-decoration: none;
-  }
+/*   padding: 2em 0em; */
+}
+
+.container {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 0px;
+  margin-top: -15px; 
   
-  /*btn_background*/
-  .effect01 {
-    color: #FFF;
-    border: 4px solid #00316E;
-    box-shadow:0px 0px 0px 4px #000 inset;
-    background-color: #00316E;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-  }
-  .effect01:hover {
-    border: 4px solid #800000;
-    background-color: #00316E;
-    box-shadow:0px 0px 0px 4px #EEE inset;
-  }
-  
-  /*btn_text*/
-  .effect01 span {
-    transition: all 0.2s ease-out;
-    z-index: 2;
-  }
-  .effect01:hover span{
-    letter-spacing: 0.13em;
-    color: #FFF;
-  }
-  
-  /*highlight*/
-  .effect01:after {
-    background: #FFF;
-    border: 0px solid #000;
-    content: "";
-    height: 155px;
-    left: -75px;
-    opacity: .8;
-    position: absolute;
-    top: -50px;
-    -webkit-transform: rotate(35deg);
-            transform: rotate(35deg);
-    width: 50px;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
-    z-index: 1;
-  }
-  .effect01:hover:after {
-    background: #FFF;
-    border: 20px solid #000;
-    opacity: 0;
-    left: 120%;
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
-  }
-  
+  padding:  40px 0px;
+  width: 240px;
+}
+
+
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect01 {
+  color: #FFF;
+  border: 4px solid #00316E;
+  box-shadow:0px 0px 0px 4px #000 inset;
+  background-color: #00316E;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.effect01:hover {
+  border: 4px solid #800000;
+  background-color: #00316E;
+  box-shadow:0px 0px 0px 4px #EEE inset;
+}
+
+/*btn_text*/
+.effect01 span {
+  transition: all 0.2s ease-out;
+  z-index: 2;
+}
+.effect01:hover span{
+  letter-spacing: 0.13em;
+  color: #FFF;
+}
+
+/*highlight*/
+.effect01:after {
+  background: #FFF;
+  border: 0px solid #000;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: .8;
+  position: absolute;
+  top: -50px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  width: 50px;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+  z-index: 1;
+}
+.effect01:hover:after {
+  background: #FFF;
+  border: 20px solid #000;
+  opacity: 0;
+  left: 120%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+ 
