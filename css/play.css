@@ -1,6 +1,6 @@
     
 :root{
-    --pieceSize: 8vw; 
+    --pieceSize: 7vw; 
 }
 
 body{
@@ -24,13 +24,17 @@ body{
   
 }
 
-.blue-flag{
+
+.piece-wrapper > *{
   position: absolute; 
-  top: 10px; 
-  right: 10px;
+ 
   width: var(--pieceSize); 
    
 }
+
+/* Testing to see correct css for the left side for red's pieces */ 
+
+
 
 
 /*DO NOT DELETE ANY OF THIS STUFF BELOW AKSHAY AGARWHALE*/
@@ -46,12 +50,11 @@ body{
   justify-content: left;
   text-align: left;
   vertical-align: top; 
- /*margin-top: -15px; */
+
   width: 100%;
   height: 100%;
   
   
-/*   padding: 2em 0em; */
 }
 
 .container {
@@ -84,7 +87,6 @@ body{
   text-decoration: none;
 }
 
-/*btn_background*/
 .effect01 {
   color: #FFF;
   border: 4px solid #00316E;
@@ -100,7 +102,6 @@ body{
   box-shadow:0px 0px 0px 4px #EEE inset;
 }
 
-/*btn_text*/
 .effect01 span {
   transition: all 0.2s ease-out;
   z-index: 2;
@@ -110,7 +111,6 @@ body{
   color: #FFF;
 }
 
-/*highlight*/
 .effect01:after {
   background: #FFF;
   border: 0px solid #000;
@@ -123,7 +123,7 @@ body{
   -webkit-transform: rotate(35deg);
           transform: rotate(35deg);
   width: 50px;
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   z-index: 1;
 }
 .effect01:hover:after {
@@ -134,4 +134,4 @@ body{
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
 }
- 
+
