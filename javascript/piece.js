@@ -11,7 +11,7 @@ for(let i = 1; i<=12; i++){
     let topMovement = 100 + 220*((i%4+1)-1); 
     pieceImages[i-1].style.top = `${topMovement}px`; 
     let numberOfColumns = Math.floor((i+3)/4); 
-    let rightMovement = 10 + 150*(numberOfColumns-1); 
+    let rightMovement = 10 + 130*(numberOfColumns-1); 
     pieceImages[i-1].style.right = `${rightMovement}px`
 }
 
@@ -20,7 +20,7 @@ for(let i = 13; i<=24; i++){
     let topMovement = 100 + 220*((i%4+1)-1); 
     pieceImages[i-1].style.top = `${topMovement}px`; 
     let numberOfColumns = Math.floor(((i%12)+3)/4); 
-    let leftMovement = 10 + 150*(numberOfColumns-1); 
+    let leftMovement = 10 + 130*(numberOfColumns-1); 
     pieceImages[i-1].style.left = `${leftMovement}px`
 }
 
