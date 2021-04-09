@@ -7,7 +7,7 @@ let height = window.innerHeight;
 
 document.documentElement.style.setProperty('--pieceSize', `${width * 0.08}px`); 
 
- 
+
 console.log(width); 
 let pieceSize = width * 0.08; 
 
@@ -35,7 +35,7 @@ for(let i = 13; i<=24; i++){
     pieceImages[i-1].style.left = `${leftMovement}px`
 }
 
-//pieceImages[23].style.left = "310px"; 
+pieceImages[23].style.left = "310px"; 
 
 
 // width is 1920px
