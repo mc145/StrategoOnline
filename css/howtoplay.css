@@ -43,7 +43,22 @@ body{
 }
 
 
-
+#howtoplayparagraph, #piecesparagraph{
+  color: white;
+  font-family: 'MedievalSharp, cursive';
+  
+  }
+  
+  
+  #howtoplayparagraph{
+  
+  
+  }
+  
+  #piecesparagraph{
+  
+    
+  }
 
 
 /*do not delete the stuff below here AKSHAY AGARWHALE*/
