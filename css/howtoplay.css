@@ -57,7 +57,10 @@ body{
   }
   
   #piecesparagraph{
-  text-align: right;
+    text-align: justify;  
+    text-align-last: right;
+
+  
   
     
   }
