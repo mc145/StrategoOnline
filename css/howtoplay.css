@@ -46,7 +46,7 @@ body{
 #howtoplayparagraph, #piecesparagraph{
   color: white;
   font-family: 'MedievalSharp, cursive';
-  
+  font-size: 1em;
   }
   
   
@@ -61,6 +61,15 @@ body{
   
     
   }
+
+  .description-wrapper-1{
+    width: 50%; 
+  }
+  .description-wrapper-2{
+    width: 50%; 
+  }
+
+
 
 
 /*do not delete the stuff below here AKSHAY AGARWHALE*/
