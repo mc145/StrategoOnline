@@ -1,4 +1,8 @@
 
+
+let mouseDown = 0;
+
+
 class Piece{
 
 
@@ -7,31 +11,51 @@ class Piece{
         this.square = square; 
     }
 
+    drag = (event) => {
+        mouseDown = 1;
+        console.log(event.clientX, event.clientY);
+    }    
 
-    
-    move = (event) =>{
-        console.log(event.clientX, event.clientY); 
+    dragIt = (event) => {
+        mouseDown=0;
     }
+
+
+
+
+    //While on click
+    //While touching map
+    //Change size to map size piece
+    //Image mvoes based on mouse coordinates
+    //When mouse releases, if the placement is legal, then move
 
 
     listenEvent = () =>{
-        let piecePhoto = document.getElementById(`piece-images${this.number}`); 
-        console.log(piecePhoto); 
-        piecePhoto.addEventListener('click', this.move); 
+
+        let piecePhoto = document.getElementById(`piece-images${this.number}`);
+        console.log(piecePhoto);
+        piecePhoto.addEventListener(`mousedown`, this.drag);
+        piecePhoto.addEventListener(`mouseup`, this.dragIt);
     }
-
-    
-
-
 
 }
 
 let Test = new Piece(16, [2,2]); 
-Test.listenEvent(); 
 
 
+let i = 1;
 
+myLoop = () => {
+    setTimeout(function() {
+        Test.listenEvent();
+        i++;
+        if (i < 10) {
+            lyLoop();
+        }
+    }, 1000)
+}
 
+myLoop();
 
 
 
