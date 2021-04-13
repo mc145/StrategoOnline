@@ -135,12 +135,11 @@ ul li a:before {
 
 ul li a:hover:before {
   transform: scale(1.2);
-  box-shadow: 0 0 15px #d35400;
+  box-shadow: 0 0 15px black;
   filter: blur(3px);
 }
 
 ul li a:hover {
-  color: #ffa502;
-  box-shadow: 0 0 15px #d35400;
-  text-shadow: 0 0 15px #d35400;
+  box-shadow: 0 0 15px black;
+  text-shadow: 0 0 15px black;
 }
