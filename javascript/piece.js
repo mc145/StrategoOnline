@@ -42,9 +42,6 @@ class Piece{
         let pieceObjectss = document.getElementById("piece-images" + this.number); 
         pieceObjectss.style.width = `${pieceSize/2.3}px`;
         draggable = true;
-
-
-
     }
     
 
@@ -105,33 +102,33 @@ let Test8 = new Piece(9, [2,2]);
 Test8.listenEvents(); 
 let Test9 = new Piece(10, [2,2]); 
 Test9.listenEvents(); 
-let Test10 = new Piece(16, [2,2]); 
+let Test10 = new Piece(11, [2,2]); 
 Test10.listenEvents(); 
-let Test11 = new Piece(16, [2,2]); 
+let Test11 = new Piece(12, [2,2]); 
 Test11.listenEvents(); 
-let Test12 = new Piece(16, [2,2]); 
+let Test12 = new Piece(13, [2,2]); 
 Test12.listenEvents(); 
-let Test13 = new Piece(16, [2,2]); 
+let Test13 = new Piece(14, [2,2]); 
 Test13.listenEvents(); 
-let Test14 = new Piece(16, [2,2]); 
+let Test14 = new Piece(15, [2,2]); 
 Test14.listenEvents(); 
 let Test15 = new Piece(16, [2,2]); 
 Test15.listenEvents(); 
-let Test16 = new Piece(16, [2,2]); 
+let Test16 = new Piece(17, [2,2]); 
 Test16.listenEvents(); 
-let Test17 = new Piece(16, [2,2]); 
+let Test17 = new Piece(18, [2,2]); 
 Test17.listenEvents(); 
-let Test18 = new Piece(16, [2,2]); 
+let Test18 = new Piece(19, [2,2]); 
 Test18.listenEvents(); 
-let Test19 = new Piece(16, [2,2]); 
+let Test19 = new Piece(20, [2,2]); 
 Test19.listenEvents(); 
-let Test20 = new Piece(16, [2,2]); 
+let Test20 = new Piece(21, [2,2]); 
 Test20.listenEvents(); 
-let Test21 = new Piece(16, [2,2]); 
+let Test21 = new Piece(22, [2,2]); 
 Test21.listenEvents(); 
-let Test22 = new Piece(16, [2,2]); 
+let Test22 = new Piece(23, [2,2]); 
 Test22.listenEvents(); 
-let Test23 = new Piece(16, [2,2]); 
+let Test23 = new Piece(24, [2,2]); 
 Test23.listenEvents(); 
 
 
