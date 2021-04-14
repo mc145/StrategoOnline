@@ -34,14 +34,10 @@ class Piece{
         console.log("down");
         let pieceObjectss = document.getElementById("piece-images" + this.number); 
         pieceObjectss.style.width = `${pieceSize/2.3}px`;
-<<<<<<< HEAD
-        draggable = true;
-=======
         this.draggable = true;
 
 
 
->>>>>>> c5d6bfa98ba93c6a98d3f5ae4a73f9ae443a03f9
     }
     
 
