@@ -62,85 +62,16 @@ class Piece{
         pieceObject.addEventListener('mouseup', this.upMouse);
         document.addEventListener('mousemove',this.moveMouse);
     }
-    
 
-    
-
-
-    // three events:
-    // on mouse up
-    // on mouse down
-    // on mouse move
-
-    // on mouse down, if it's in range of a picture, then draggable = true √
-    // on mouse move, drag the picture to the correc x and y coordinates √
-    //on mouse up release
 
 }
 
-let Test0 = new Piece(1, [2,2]); 
-Test0.listenEvents(); 
-let Test1 = new Piece(2, [2,2]); 
-Test1.listenEvents(); 
-let Test2 = new Piece(3, [2,2]); 
-Test2.listenEvents(); 
-let Test3 = new Piece(4, [2,2]); 
-Test3.listenEvents(); 
-let Test4 = new Piece(5, [2,2]); 
-Test4.listenEvents(); 
-let Test5 = new Piece(6, [2,2]); 
-Test5.listenEvents(); 
-let Test6 = new Piece(7, [2,2]); 
-Test6.listenEvents(); 
-let Test7 = new Piece(8, [2,2]); 
-Test7.listenEvents(); 
-let Test8 = new Piece(9, [2,2]); 
-Test8.listenEvents(); 
-let Test9 = new Piece(10, [2,2]); 
-Test9.listenEvents(); 
-let Test10 = new Piece(11, [2,2]); 
-Test10.listenEvents(); 
-let Test11 = new Piece(12, [2,2]); 
-Test11.listenEvents(); 
-let Test12 = new Piece(13, [2,2]); 
-Test12.listenEvents(); 
-let Test13 = new Piece(14, [2,2]); 
-Test13.listenEvents(); 
-let Test14 = new Piece(15, [2,2]); 
-Test14.listenEvents(); 
-let Test15 = new Piece(16, [2,2]); 
-Test15.listenEvents(); 
-let Test16 = new Piece(17, [2,2]); 
-Test16.listenEvents(); 
-let Test17 = new Piece(18, [2,2]); 
-Test17.listenEvents(); 
-let Test18 = new Piece(19, [2,2]); 
-Test18.listenEvents(); 
-let Test19 = new Piece(20, [2,2]); 
-Test19.listenEvents(); 
-let Test20 = new Piece(21, [2,2]); 
-Test20.listenEvents(); 
-let Test21 = new Piece(22, [2,2]); 
-Test21.listenEvents(); 
-let Test22 = new Piece(23, [2,2]); 
-Test22.listenEvents(); 
-let Test23 = new Piece(24, [2,2]); 
-Test23.listenEvents(); 
+let pieceObjects = []; 
 
-
-
-
-// document.addEventListener('mousedown', blah); 
-
-//  function blah(){
-//      console.log("herro");
-//  }
-
-//tips : onmousedown doesn't work ok
-
-
-
-
+for(let i = 0; i<24; i++){
+    pieceObjects.push(new Piece(i+1, [2,2])); // change the [2,2] later
+    pieceObjects[i].listenEvents(); 
+}
 
 //desktop version -> works on 13 inch, 15 inch, and 24 inch screens: 
 

@@ -27,7 +27,7 @@ body{
 
 .piece-wrapper > *{
   position: absolute; 
- 
+  z-index: 11; 
   width: var(--pieceSize); 
    
 }
