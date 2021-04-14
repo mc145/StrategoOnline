@@ -13,16 +13,7 @@ let heightPieceSize = height * 0.21;
 
 let mouseDown = 0;
 
-let draggable = false; 
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
-  
 
 
 class Piece{
@@ -31,6 +22,7 @@ class Piece{
     constructor(number, square){
         this.number = number; 
         this.square = square; 
+        this.draggable = false; 
     }
 
     
@@ -39,19 +31,28 @@ class Piece{
         // let columns = Math.floor((this.number+3)/4); 
         // let xCoord = 10 + pieceSize*(columns-1); 
         // console.log(xCoord, yCoord);
+        console.log("down");
         let pieceObjectss = document.getElementById("piece-images" + this.number); 
         pieceObjectss.style.width = `${pieceSize/2.3}px`;
+<<<<<<< HEAD
         draggable = true;
+=======
+        this.draggable = true;
+
+
+
+>>>>>>> c5d6bfa98ba93c6a98d3f5ae4a73f9ae443a03f9
     }
     
 
     upMouse = () => {
-        draggable = false;
+        console.log("up");
+        this.draggable = false;
     }
 
     moveMouse = (event) => {
-
-        if(draggable){
+        console.log("move");
+        if(this.draggable){
             let pieceObjects = document.getElementById('piece-images' + this.number); 
             pieceObjects.style.left = `${event.clientX}px`; 
             pieceObjects.style.top = `${event.clientY}px`; 
@@ -63,8 +64,7 @@ class Piece{
         let pieceObject = document.getElementById('piece-images' + this.number); 
         pieceObject.addEventListener('mousedown',this.downMouse); 
         pieceObject.addEventListener('mouseup', this.upMouse);
-        pieceObject.addEventListener('mousemove',this.moveMouse);
-        setTimeout(200);
+        document.addEventListener('mousemove',this.moveMouse);
     }
     
 
