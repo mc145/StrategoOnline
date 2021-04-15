@@ -7,33 +7,47 @@ let numberOfPieces = []; //insert array of the number of duplicates each piece i
 document.documentElement.style.setProperty('--pieceSize', `${width * 0.08*0.85}px`); 
 
 
-let pieceSize = width * 0.08; 
+const pieceSize = width * 0.08; 
 let heightPieceSize = height * 0.21; 
 
 
 let mouseDown = 0;
 
+class Square{
 
+    constructor(squareNumber){
+        this.squareNumber = squareNumber; 
+    }
+
+    calculateCoordinat
+
+
+
+
+    
+    
+
+
+}
 
 
 class Piece{
 
 
-    constructor(number, square){
+    constructor(number){
         this.number = number; 
-        this.square = square; 
         this.draggable = false; 
     }
 
     
-    downMouse = () =>{
+    downMouse = (e) =>{
         // let yCoord = 100 + heightPieceSize*((this.number%4+1)-1);
         // let columns = Math.floor((this.number+3)/4); 
         // let xCoord = 10 + pieceSize*(columns-1); 
         // console.log(xCoord, yCoord);
+        e.preventDefault(); 
         console.log("down");
-        let pieceObjectss = document.getElementById("piece-images" + this.number); 
-        pieceObjectss.style.width = `${pieceSize/2.3}px`;
+      
         this.draggable = true;
 
 
@@ -41,19 +55,35 @@ class Piece{
     }
     
 
-    upMouse = () => {
+    upMouse = (e) => {
+        e.preventDefault(); 
         console.log("up");
         this.draggable = false;
     }
 
     moveMouse = (event) => {
-        console.log("move");
         if(this.draggable){
+            
             let pieceObjects = document.getElementById('piece-images' + this.number); 
-            pieceObjects.style.left = `${event.clientX}px`; 
-            pieceObjects.style.top = `${event.clientY}px`; 
+            pieceObjects.style.left = `${event.clientX-40}px`; 
+            pieceObjects.style.top = `${event.clientY-40}px`; 
+            // 203, 17
+            // 595, 17
+            // 595, 409
+            // 203, 409
+            let pieceObjectss = document.getElementById("piece-images" + this.number); 
+            if((event.clientX >= 332) && (event.clientX <= 951) && (event.clientY >= 18) && (event.clientY <= 640)){
+                pieceObjectss.style.width = `${pieceSize/2.3}px`;
+
+            }
+            else{
+                pieceObjectss.style.width = `${pieceSize}px`; 
+            }
+
+
         }
     } 
+    
 
 
     listenEvents = () =>{
@@ -61,6 +91,7 @@ class Piece{
         pieceObject.addEventListener('mousedown',this.downMouse); 
         pieceObject.addEventListener('mouseup', this.upMouse);
         document.addEventListener('mousemove',this.moveMouse);
+        
     }
 
 
@@ -69,8 +100,13 @@ class Piece{
 let pieceObjects = []; 
 
 for(let i = 0; i<24; i++){
-    pieceObjects.push(new Piece(i+1, [2,2])); // change the [2,2] later
+    pieceObjects.push(new Piece(i+1)); // change the [2,2] later
     pieceObjects[i].listenEvents(); 
+}
+
+let squareObjects = []; 
+for(let i = 0; i<40; i++){
+    squareObjects.push(new Square([1,1], [1,2], [1,3], [1,4])); 
 }
 
 //desktop version -> works on 13 inch, 15 inch, and 24 inch screens: 
@@ -109,3 +145,21 @@ pieceImages[23].style.top = `100px`;
 //145 px width 
 
 // 0.08th of the entire width 
+// function unacceptableAkshay(){
+// while(true){
+//     alert("akshay, you're BADDDD");
+// }
+
+// }
+
+
+// unacceptableAkshay();
+
+
+
+
+document.addEventListener('click', blah); 
+
+function blah(e){
+    console.log(e.clientX, e.clientY);
+}
