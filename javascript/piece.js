@@ -72,7 +72,7 @@ class Piece{
             // 595, 409
             // 203, 409
             let pieceObjectss = document.getElementById("piece-images" + this.number); 
-            if((event.clientX >= 332) && (event.clientX <= 951) && (event.clientY >= 18) && (event.clientY <= 640)){
+            if((event.clientX >= 444) && (event.clientX <= 1298) && (event.clientY >= 528) && (event.clientY <= 873)){
                 pieceObjectss.style.width = `${pieceSize/2.3}px`;
 
             }
