@@ -37,6 +37,7 @@ class Piece{
     constructor(number){
         this.number = number; 
         this.draggable = false; 
+        this.onBoard;
     }
 
     
@@ -59,6 +60,9 @@ class Piece{
         e.preventDefault(); 
         console.log("up");
         this.draggable = false;
+        if(!onBoard){
+            
+        }
     }
 
     moveMouse = (event) => {
@@ -74,10 +78,14 @@ class Piece{
             let pieceObjectss = document.getElementById("piece-images" + this.number); 
             if((event.clientX >= 444) && (event.clientX <= 1298) && (event.clientY >= 528) && (event.clientY <= 873)){
                 pieceObjectss.style.width = `${pieceSize/2.3}px`;
-
+                this.onBoard = true;
             }
             else{
                 pieceObjectss.style.width = `${pieceSize}px`; 
+                this.onBoard = false;
+                //pieceImages[i-1].style.top = `${topMovement}px`;  
+                //pieceImages[i-1].style.right = `${rightMovement}px`;
+                //pieceImages[i-1].style.left = `${leftMovement}px`;
             }
 
 
