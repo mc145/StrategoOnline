@@ -26,14 +26,22 @@ let gridY = Math.floor(height/981 * 907);
 
 
 let squareCoords = []; 
-
+let squareCoords2 = []; 
 
 for(let i = 0; i<40; i++){
     let rowNum = Math.floor(i/10); 
     let colNum = i%10; 
     let squareX = gridX + (colNum * gridWidth/10); 
     let squareY = gridY - (rowNum * gridWidth/10); 
-    squareCoords.push([squareX + gridWidth/20, squareY - gridWidth/20 + 20]);
+    squareCoords.push([squareX + gridWidth/20, squareY - gridWidth/20 + 30]);
+}
+
+for(let i = 0; i<40; i++){
+    let rowNum = Math.floor(i/10); 
+    let colNum = i%10; 
+    let squareX  =  gridX + (colNum * gridWidth/10); 
+    let squareY = gridY  - 6*gridWidth/10 - (rowNum * gridWidth/10); 
+    squareCoords2.push([squareX + gridWidth/20, squareY - gridWidth/20 + 30]); 
 }
 
 console.log(squareCoords); 
@@ -64,16 +72,35 @@ class Piece{
     }
 
     findClosestGrid = (xMouse, yMouse) =>{
+        console.log("number", this.number); 
+        
         let correctGrid = 0; 
         let correctGridVal = this.pythag(xMouse, yMouse, squareCoords[0][0], squareCoords[0][1]); 
-        for(let i = 1; i < 40; i++){
+        if(this.number <= 12){
+       
+        for(let i = 1; i < squareCoords.length; i++){
             if(this.pythag(xMouse, yMouse, squareCoords[i][0], squareCoords[i][1]) < correctGridVal){
                 correctGridVal = this.pythag(xMouse, yMouse, squareCoords[i][0], squareCoords[i][1]); 
                 correctGrid = i; 
             }
         }
         
-        return correctGrid; 
+    }
+
+    else if(this.number > 12){
+        correctGrid = 0; 
+        correctGridVal = this.pythag(xMouse, yMouse, squareCoords2[0][0], squareCoords2[0][1]); 
+        for(let i = 1; i < squareCoords2.length; i++){
+            if(this.pythag(xMouse, yMouse, squareCoords2[i][0], squareCoords2[i][1]) < correctGridVal){
+                correctGridVal = this.pythag(xMouse, yMouse, squareCoords2[i][0], squareCoords2[i][1]); 
+                correctGrid = i; 
+            }
+        }
+    }
+
+    return correctGrid; 
+
+   
     }
     
 
@@ -84,8 +111,15 @@ class Piece{
             if((e.clientX >= gridX) && (e.clientX <= gridX + gridWidth) && (e.clientY <= gridY) && (e.clientY >= gridY - gridWidth)){
                 let pieceObjectss = document.getElementById('piece-images' + this.number); 
                 let closestGrid = this.findClosestGrid(e.clientX, e.clientY); 
+
+                if(this.number <= 12){
                 pieceObjectss.style.left = `${squareCoords[closestGrid][0] - 30}px`; 
-                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 10}px`; 
+                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 20}px`; 
+                }
+                else{
+                    pieceObjectss.style.left = `${squareCoords2[closestGrid][0] - 30}px`; 
+                    pieceObjectss.style.top = `${squareCoords2[closestGrid][1] - 20}px`; 
+                }
 
             }
         }
@@ -93,6 +127,8 @@ class Piece{
     }
 
     moveMouse = (event) => {
+
+        event.preventDefault(); 
         if(this.draggable){
             
             let pieceObjects = document.getElementById('piece-images' + this.number); 
