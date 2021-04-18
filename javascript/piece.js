@@ -10,26 +10,33 @@ document.documentElement.style.setProperty('--pieceSize', `${width * 0.08*0.85}p
 const pieceSize = width * 0.08; 
 let heightPieceSize = height * 0.21; 
 
+console.log("width", "height", width, height); 
 
-let mouseDown = 0;
-
-class Square{
-
-    constructor(squareNumber){
-        this.squareNumber = squareNumber; 
-    }
-
-    calculateCoordinat
+// with width at 1920 and height at 981, the bottom left corner of the square is at (490, 907); 
 
 
+let grid = document.getElementById('img-board'); 
+let gridStyles = window.getComputedStyle(grid); 
+let gridWidths = gridStyles.width; 
+let gridWidth = parseInt(gridWidths.substring(0, gridWidths.length - 2)); 
 
 
-    
-    
+let gridX = Math.floor(width/1920 * 490);
+let gridY = Math.floor(height/981 * 907); 
 
 
+let squareCoords = []; 
+
+
+for(let i = 0; i<40; i++){
+    let rowNum = Math.floor(i/10); 
+    let colNum = i%10; 
+    let squareX = gridX + (colNum * gridWidth/10); 
+    let squareY = gridY - (rowNum * gridWidth/10); 
+    squareCoords.push([squareX + gridWidth/20, squareY - gridWidth/20 + 20]);
 }
 
+console.log(squareCoords); 
 
 class Piece{
 
@@ -40,6 +47,9 @@ class Piece{
         this.onBoard;
     }
 
+    pythag = (x1, y1, x2, y2) =>{
+        return Math.sqrt(Math.abs(x1 - x2) * Math.abs(x1 - x2) + Math.abs(y1 - y2) * Math.abs(y1 - y2)); 
+    }
     
     downMouse = (e) =>{
         // let yCoord = 100 + heightPieceSize*((this.number%4+1)-1);
@@ -47,18 +57,39 @@ class Piece{
         // let xCoord = 10 + pieceSize*(columns-1); 
         // console.log(xCoord, yCoord);
         e.preventDefault(); 
-        console.log("down");
       
         this.draggable = true;
 
 
 
     }
+
+    findClosestGrid = (xMouse, yMouse) =>{
+        let correctGrid = 0; 
+        let correctGridVal = this.pythag(xMouse, yMouse, squareCoords[0][0], squareCoords[0][1]); 
+        for(let i = 1; i < 40; i++){
+            if(this.pythag(xMouse, yMouse, squareCoords[i][0], squareCoords[i][1]) < correctGridVal){
+                correctGridVal = this.pythag(xMouse, yMouse, squareCoords[i][0], squareCoords[i][1]); 
+                correctGrid = i; 
+            }
+        }
+        
+        return correctGrid; 
+    }
     
 
     upMouse = (e) => {
         e.preventDefault(); 
-        console.log("up");
+
+        if(this.draggable){
+            if((e.clientX >= gridX) && (e.clientX <= gridX + gridWidth) && (e.clientY <= gridY) && (e.clientY >= gridY - gridWidth)){
+                let pieceObjectss = document.getElementById('piece-images' + this.number); 
+                let closestGrid = this.findClosestGrid(e.clientX, e.clientY); 
+                pieceObjectss.style.left = `${squareCoords[closestGrid][0] - 30}px`; 
+                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 10}px`; 
+
+            }
+        }
         this.draggable = false;
         if(!onBoard){
             
@@ -75,17 +106,15 @@ class Piece{
             // 595, 17
             // 595, 409
             // 203, 409
-            let pieceObjectss = document.getElementById("piece-images" + this.number); 
-            if((event.clientX >= 444) && (event.clientX <= 1298) && (event.clientY >= 528) && (event.clientY <= 873)){
-                pieceObjectss.style.width = `${pieceSize/2.3}px`;
-                this.onBoard = true;
+            //2.3
+
+            console.log(gridX, gridX + gridWidth, gridY, gridY - gridWidth); 
+            if((event.clientX >= gridX) && (event.clientX <= gridX + gridWidth) && (event.clientY <= gridY) && (event.clientY >= gridY - gridWidth)){
+                pieceObjects.style.width = `${pieceSize/2.3}px`;
+
             }
             else{
-                pieceObjectss.style.width = `${pieceSize}px`; 
-                this.onBoard = false;
-                //pieceImages[i-1].style.top = `${topMovement}px`;  
-                //pieceImages[i-1].style.right = `${rightMovement}px`;
-                //pieceImages[i-1].style.left = `${leftMovement}px`;
+                pieceObjects.style.width = `${pieceSize * 0.85}px`;
             }
 
 
@@ -99,6 +128,7 @@ class Piece{
         pieceObject.addEventListener('mousedown',this.downMouse); 
         pieceObject.addEventListener('mouseup', this.upMouse);
         document.addEventListener('mousemove',this.moveMouse);
+
         
     }
 
@@ -112,10 +142,7 @@ for(let i = 0; i<24; i++){
     pieceObjects[i].listenEvents(); 
 }
 
-let squareObjects = []; 
-for(let i = 0; i<40; i++){
-    squareObjects.push(new Square([1,1], [1,2], [1,3], [1,4])); 
-}
+
 
 //desktop version -> works on 13 inch, 15 inch, and 24 inch screens: 
 
