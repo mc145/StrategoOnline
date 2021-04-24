@@ -21,8 +21,19 @@ let gridWidths = gridStyles.width;
 let gridWidth = parseInt(gridWidths.substring(0, gridWidths.length - 2)); 
 
 
-let gridX = Math.floor(width/1920 * 490);
-let gridY = Math.floor(height/981 * 907); 
+
+let gridX = 0; 
+let gridY = 0;
+
+while(grid != null){
+    gridX += grid.offsetLeft; 
+    gridY += grid.offsetTop; 
+    grid = grid.offsetParent; 
+}
+
+gridY += gridWidth; 
+
+
 
 
 let squareCoords = []; 
@@ -33,15 +44,15 @@ for(let i = 0; i<40; i++){
     let colNum = i%10; 
     let squareX = gridX + (colNum * gridWidth/10); 
     let squareY = gridY - (rowNum * gridWidth/10); 
-    squareCoords.push([squareX + gridWidth/20, squareY - gridWidth/20 + 30]);
+    squareCoords.push([squareX + gridWidth/20, squareY - gridWidth/20]);
 }
 
 for(let i = 0; i<40; i++){
     let rowNum = Math.floor(i/10); 
     let colNum = i%10; 
     let squareX  =  gridX + (colNum * gridWidth/10); 
-    let squareY = gridY  - 6*gridWidth/10 - (rowNum * gridWidth/10); 
-    squareCoords2.push([squareX + gridWidth/20, squareY - gridWidth/20 + 30]); 
+    let squareY = gridY  -  6*gridWidth/10 - (rowNum * gridWidth/10); 
+    squareCoords2.push([squareX + gridWidth/20, squareY - gridWidth/20]); 
 }
 
 console.log(squareCoords); 
@@ -52,7 +63,6 @@ class Piece{
     constructor(number){
         this.number = number; 
         this.draggable = false; 
-        this.onBoard;
     }
 
     pythag = (x1, y1, x2, y2) =>{
@@ -114,20 +124,18 @@ class Piece{
                 let closestGrid = this.findClosestGrid(e.clientX, e.clientY); 
 
                 if(this.number <= 12){
-                pieceObjectss.style.left = `${squareCoords[closestGrid][0] - 30}px`; 
-                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 20}px`; 
+                pieceObjectss.style.left = `${squareCoords[closestGrid][0] - 35}px`; 
+                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 40}px`; 
                 }
                 else{
-                    pieceObjectss.style.left = `${squareCoords2[closestGrid][0] - 30}px`; 
-                    pieceObjectss.style.top = `${squareCoords2[closestGrid][1] - 20}px`; 
+                    pieceObjectss.style.left = `${squareCoords2[closestGrid][0] - 35}px`; 
+                    pieceObjectss.style.top = `${squareCoords2[closestGrid][1] - 40}px`; 
                 }
 
             }
         }
         this.draggable = false;
-        if(!onBoard){
-            
-        }
+       
     }
 
     moveMouse = (event) => {
