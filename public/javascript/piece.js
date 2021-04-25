@@ -1,6 +1,7 @@
 
 let socket; 
-let id; 
+let ID; 
+let COLOR; 
 
 socket = io.connect('http://localhost:3000'); 
 
@@ -17,7 +18,11 @@ socket = io.connect('http://localhost:3000');
 socket.on('PLAYERS', (data) =>{
     console.log(`[RECEIVED MESSAGE]... PLAYERS`);
     console.log(data); 
+    COLOR = data.color == 'red'; 
+    console.log(COLOR); 
 })
+
+
 
 
 
@@ -155,11 +160,11 @@ class Piece{
 
                 if(this.number <= 12){
                 pieceObjectss.style.left = `${squareCoords[closestGrid][0] - 35}px`; 
-                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 40}px`; 
+                pieceObjectss.style.top =  `${squareCoords[closestGrid][1] - 60}px`; 
                 }
                 else{
                     pieceObjectss.style.left = `${squareCoords2[closestGrid][0] - 35}px`; 
-                    pieceObjectss.style.top = `${squareCoords2[closestGrid][1] - 40}px`; 
+                    pieceObjectss.style.top = `${squareCoords2[closestGrid][1] - 60}px`; 
                 }
 
             }
